@@ -182,7 +182,7 @@ class MarkdownBody extends MarkdownWidget {
   Widget build(BuildContext context, List<Widget> children) {
     if (children.length == 1) return children.single;
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: children,
     );
   }

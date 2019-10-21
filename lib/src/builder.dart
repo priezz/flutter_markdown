@@ -178,7 +178,8 @@ class MarkdownBuilder implements md.NodeVisitor {
 
       if (current.children.isNotEmpty) {
         child = Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: current.children,
         );
       } else {
@@ -191,7 +192,6 @@ class MarkdownBuilder implements md.NodeVisitor {
       } else if (tag == 'li') {
         if (_listIndents.isNotEmpty) {
           child = Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               SizedBox(
                 width: styleSheet.listIndent,
