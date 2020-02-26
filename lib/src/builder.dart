@@ -310,7 +310,11 @@ class MarkdownBuilder implements md.NodeVisitor {
 
       if (tag == 'img') {
         // create an image widget for this image
-        current.children.add(_buildImage(element.attributes['src']));
+        current.children.add(_buildRichText(
+          TextSpan(children: [
+            WidgetSpan(child: _buildImage(element.attributes['src'])),
+          ]),
+        ));
       } else if (tag == 'br') {
         current.children.add(_buildRichText(const TextSpan(text: '\n')));
       } else if (tag == 'th' || tag == 'td') {
